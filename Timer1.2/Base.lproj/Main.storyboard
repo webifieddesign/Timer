@@ -1,25 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10089" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer1_2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bmy-hj-VFc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="119" id="5Cn-Og-fHA" customClass="TimerTableViewCell" customModule="Timer1_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Cn-Og-fHA" id="sOg-dH-Nkk">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3o-HX-lCJ">
+                                                    <rect key="frame" x="8" y="24" width="304" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="JRu-km-Pcq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                                    <color key="textColor" red="0.15294118230000001" green="0.49803921579999999" blue="0.80392158030000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5Z-c1-Xye">
+                                                    <rect key="frame" x="0.0" y="44" width="320" height="74.5"/>
+                                                    <color key="backgroundColor" red="0.15294118230000001" green="0.49803921579999999" blue="0.80392158030000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="74.5" id="L1B-j3-ifO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="47"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="G3o-HX-lCJ" firstAttribute="trailing" secondItem="sOg-dH-Nkk" secondAttribute="trailingMargin" id="85N-ZV-bwb"/>
+                                                <constraint firstAttribute="trailing" secondItem="a5Z-c1-Xye" secondAttribute="trailing" id="8CU-Mm-GxG"/>
+                                                <constraint firstItem="G3o-HX-lCJ" firstAttribute="leading" secondItem="sOg-dH-Nkk" secondAttribute="leadingMargin" id="8vP-cu-8lM"/>
+                                                <constraint firstAttribute="bottom" secondItem="a5Z-c1-Xye" secondAttribute="bottom" id="VgV-uk-L1N"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="G3o-HX-lCJ" secondAttribute="bottom" constant="62.5" id="dIc-xH-MBJ"/>
+                                                <constraint firstItem="a5Z-c1-Xye" firstAttribute="leading" secondItem="sOg-dH-Nkk" secondAttribute="leading" id="gKz-pP-YvQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timerDurationLabel" destination="a5Z-c1-Xye" id="L8W-aB-Jph"/>
+                                            <outlet property="timerTitleLabel" destination="G3o-HX-lCJ" id="Di0-Rv-Ftf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bmy-hj-VFc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8K1-2n-gcP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bmy-hj-VFc" secondAttribute="bottom" id="Pcn-8Q-2dD"/>
+                            <constraint firstItem="bmy-hj-VFc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jDj-sj-AOc"/>
+                            <constraint firstAttribute="trailing" secondItem="bmy-hj-VFc" secondAttribute="trailing" id="ulC-tp-VEt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="bmy-hj-VFc" id="CYh-c5-7nT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="366"/>
         </scene>
     </scenes>
 </document>
