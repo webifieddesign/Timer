@@ -38,28 +38,32 @@
                                                     <color key="textColor" red="0.15294118230000001" green="0.49803921579999999" blue="0.80392158030000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5Z-c1-Xye">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mU-HB-Rg4">
                                                     <rect key="frame" x="0.0" y="44" width="320" height="74.5"/>
                                                     <color key="backgroundColor" red="0.15294118230000001" green="0.49803921579999999" blue="0.80392158030000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="74.5" id="L1B-j3-ifO"/>
+                                                        <constraint firstAttribute="height" constant="74.5" id="mTz-U6-ZC5"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="47"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="48"/>
+                                                    <state key="normal" title="00:00:00">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="timerDurationButtonPressed:" destination="5Cn-Og-fHA" eventType="touchUpInside" id="PAx-Pe-zYf"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="6mU-HB-Rg4" secondAttribute="bottom" id="7HB-Ef-Drh"/>
                                                 <constraint firstItem="G3o-HX-lCJ" firstAttribute="trailing" secondItem="sOg-dH-Nkk" secondAttribute="trailingMargin" id="85N-ZV-bwb"/>
-                                                <constraint firstAttribute="trailing" secondItem="a5Z-c1-Xye" secondAttribute="trailing" id="8CU-Mm-GxG"/>
                                                 <constraint firstItem="G3o-HX-lCJ" firstAttribute="leading" secondItem="sOg-dH-Nkk" secondAttribute="leadingMargin" id="8vP-cu-8lM"/>
-                                                <constraint firstAttribute="bottom" secondItem="a5Z-c1-Xye" secondAttribute="bottom" id="VgV-uk-L1N"/>
+                                                <constraint firstAttribute="trailing" secondItem="6mU-HB-Rg4" secondAttribute="trailing" id="TgK-F1-Faa"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="G3o-HX-lCJ" secondAttribute="bottom" constant="62.5" id="dIc-xH-MBJ"/>
-                                                <constraint firstItem="a5Z-c1-Xye" firstAttribute="leading" secondItem="sOg-dH-Nkk" secondAttribute="leading" id="gKz-pP-YvQ"/>
+                                                <constraint firstItem="6mU-HB-Rg4" firstAttribute="leading" secondItem="sOg-dH-Nkk" secondAttribute="leading" id="glE-3v-Sxb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="timerDurationLabel" destination="a5Z-c1-Xye" id="L8W-aB-Jph"/>
+                                            <outlet property="timerDurationButton" destination="6mU-HB-Rg4" id="k7H-ba-Y5W"/>
                                             <outlet property="timerTitleLabel" destination="G3o-HX-lCJ" id="Di0-Rv-Ftf"/>
                                         </connections>
                                     </tableViewCell>

@@ -8,13 +8,21 @@
 
 import UIKit
 
+protocol TimerTableViewCellDelegate {
+    func startTimer(indexPath: NSIndexPath!)
+    func stopTimer(indexPath: NSIndexPath!)
+}
+
 class TimerTableViewCell: UITableViewCell {
 
     var timer = NSTimer()
     
+    var indexPath: NSIndexPath!
+    var delegate: TimerTableViewCellDelegate?
+    var timerStarted = false
 
     @IBOutlet weak var timerTitleLabel: UILabel!
-    @IBOutlet weak var timerDurationLabel: UILabel!
+    @IBOutlet weak var timerDurationButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,4 +35,16 @@ class TimerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func timerDurationButtonPressed(sender: UIButton) {
+        
+        if !timerStarted {
+            delegate?.startTimer(indexPath)
+            timerStarted = !timerStarted
+        }
+        else {
+            delegate?.stopTimer(indexPath)
+            timerStarted = !timerStarted
+        }
+    
+    }
 }
