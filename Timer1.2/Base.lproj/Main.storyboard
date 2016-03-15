@@ -18,9 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-FK-AJR">
+                                <rect key="frame" x="0.0" y="33" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Vad-ao-jGe"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TKq-to-0qE"/>
+                                    <barButtonItem title="Game Timer" id="L4g-Ui-2bU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZBx-2i-Eyz"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyd-YA-ved">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="NmI-ed-QjC"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PM3-p5-5C9"/>
+                                    <barButtonItem title="Item" systemItem="add" id="55f-yw-2bB"/>
+                                </items>
+                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bmy-hj-VFc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3h9-ex-crF">
+                                    <rect key="frame" x="0.0" y="147" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <items/>
+                                </toolbar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="119" id="5Cn-Og-fHA" customClass="TimerTableViewCell" customModule="Timer1_2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="119"/>
@@ -39,8 +65,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mU-HB-Rg4">
-                                                    <rect key="frame" x="0.0" y="44" width="320" height="74.5"/>
+                                                    <rect key="frame" x="0.0" y="44" width="320" height="75"/>
                                                     <color key="backgroundColor" red="0.15294118230000001" green="0.49803921579999999" blue="0.80392158030000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="74.5" id="mTz-U6-ZC5"/>
                                                     </constraints>
@@ -50,6 +77,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="timerDurationButtonPressed:" destination="5Cn-Og-fHA" eventType="touchUpInside" id="PAx-Pe-zYf"/>
+                                                        <outletCollection property="gestureRecognizers" destination="6pb-cH-kpp" appends="YES" id="SvP-f4-731"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -72,9 +100,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bmy-hj-VFc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8K1-2n-gcP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bmy-hj-VFc" secondAttribute="bottom" id="Pcn-8Q-2dD"/>
+                            <constraint firstItem="j2i-FK-AJR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3D2-4p-hmz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wyd-YA-ved" secondAttribute="bottom" id="5mz-6m-tfW"/>
+                            <constraint firstItem="bmy-hj-VFc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="8K1-2n-gcP"/>
+                            <constraint firstItem="Wyd-YA-ved" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ApX-yQ-bhv"/>
+                            <constraint firstItem="Wyd-YA-ved" firstAttribute="top" secondItem="bmy-hj-VFc" secondAttribute="bottom" id="bzJ-p7-Pod"/>
                             <constraint firstItem="bmy-hj-VFc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jDj-sj-AOc"/>
+                            <constraint firstAttribute="trailing" secondItem="j2i-FK-AJR" secondAttribute="trailing" id="kKv-bQ-hfW"/>
+                            <constraint firstItem="j2i-FK-AJR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="pRE-lU-Kwa"/>
+                            <constraint firstAttribute="trailing" secondItem="Wyd-YA-ved" secondAttribute="trailing" id="t7y-7l-UmD"/>
                             <constraint firstAttribute="trailing" secondItem="bmy-hj-VFc" secondAttribute="trailing" id="ulC-tp-VEt"/>
                         </constraints>
                     </view>
@@ -83,6 +117,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6pb-cH-kpp"/>
             </objects>
             <point key="canvasLocation" x="162" y="366"/>
         </scene>

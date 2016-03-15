@@ -11,6 +11,7 @@ import UIKit
 protocol TimerTableViewCellDelegate {
     func startTimer(indexPath: NSIndexPath!)
     func stopTimer(indexPath: NSIndexPath!)
+    func resetTimer(indexPath: NSIndexPath!)
 }
 
 class TimerTableViewCell: UITableViewCell {
@@ -27,6 +28,9 @@ class TimerTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "longPress:")
+        self.timerDurationButton.addGestureRecognizer(longPressGesture)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -36,7 +40,7 @@ class TimerTableViewCell: UITableViewCell {
     }
 
     @IBAction func timerDurationButtonPressed(sender: UIButton) {
-        
+                
         if !timerStarted {
             delegate?.startTimer(indexPath)
             timerStarted = !timerStarted
@@ -45,6 +49,10 @@ class TimerTableViewCell: UITableViewCell {
             delegate?.stopTimer(indexPath)
             timerStarted = !timerStarted
         }
-    
     }
+    
+    func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        delegate?.resetTimer(indexPath)
+    }
+    
 }
